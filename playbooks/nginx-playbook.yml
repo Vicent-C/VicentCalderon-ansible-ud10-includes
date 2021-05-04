@@ -1,0 +1,6 @@
+---
+- name: Instalar nginx si no está instalado
+  apt: 
+    name: nginx
+    state: latest
+...

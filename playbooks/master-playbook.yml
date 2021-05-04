@@ -1,0 +1,16 @@
+
+---
+- name: Gestión de servicios
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Desinstalar apache2
+      include: env-preparation-playbook.yml
+    - name: instalar nginx
+      include: nginx-playbook.yml
+    - name: Despliegue ficheros
+      include: deploy-playbook.yml
+    - name: reinicio nginx
+      include: nginx-handler.yml
+...
